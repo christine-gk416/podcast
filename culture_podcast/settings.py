@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'culture-podcast.herokuapp.com']
 
 ALLOWED_ORIGINS = ['https://8000-christinegk416-podcast-6xg0yosb3xi.ws-eu46.gitpod.io']
 CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
