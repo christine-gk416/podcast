@@ -16,6 +16,7 @@ from pathlib import Path
 if os.path.exists("env.py"):
     import env
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -29,9 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-Debug = True
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['localhost']
 
 ALLOWED_ORIGINS = ['https://8000-christinegk416-podcast-6xg0yosb3xi.ws-eu46.gitpod.io']
 CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
+    'django_summernote',
     'main_podcast',
 ]
 
@@ -172,6 +174,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
