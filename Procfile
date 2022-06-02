@@ -1,0 +1,1 @@
+web: gunicorn culture_podcast.wsgi:application
